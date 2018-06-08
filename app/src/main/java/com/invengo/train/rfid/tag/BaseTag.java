@@ -51,16 +51,22 @@ public abstract class BaseTag {
 
 	// 获取格式化的制造年月
 	protected String getTimFmt (String s) {
-		int y = Integer.parseInt(s.substring(0, 2));
-		int m = Integer.parseInt(s.substring(2), 16);
+		String r;
+		try {
+			int y = Integer.parseInt(s.substring(0, 2));
+			int m = Integer.parseInt(s.substring(2), 16);
 
-		if (y > 50) {
-			y += 1900;
-		} else {
-			y += 2000;
+			if (y > 50) {
+				y += 1900;
+			} else {
+				y += 2000;
+			}
+
+			r = String.format("%4d年%02d月", y, m);
+		} catch (Exception e) {
+			r = "--年--月";
 		}
-
-		return String.format("%4d年%02d月", y, m);
+		return r;
 	}
 
 	/********************* 接口 **************************/
