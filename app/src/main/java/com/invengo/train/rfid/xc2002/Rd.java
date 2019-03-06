@@ -1,6 +1,7 @@
 package com.invengo.train.rfid.xc2002;
 
 import android.content.Context;
+import android.os.Environment;
 
 import com.atid.lib.system.ModuleControl;
 import com.invengo.train.rfid.Base;
@@ -9,10 +10,14 @@ import com.invengo.train.rfid.EmCb;
 import com.invengo.train.rfid.tag.BaseTag;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import android_serialport_api.SerialPort;
+
+import static com.invengo.train.xc2002.Ma.sdDir;
 
 /**
  * 铁路标签读出器
@@ -158,7 +163,25 @@ public class Rd extends Base {
 
 	@Override
 	public void init(Context ct) throws Exception {
-		BaseTag.load(ct.getAssets().open(xmlPath));
+		// 文件复制
+		File ini = new File(Environment.getExternalStorageDirectory(), sdDir + xmlPath);
+		InputStream confis = ct.getAssets().open(xmlPath);
+		if (!ini.exists()) {
+			if (!ini.getParentFile().exists()) {
+				ini.getParentFile().mkdirs();
+			}
+			FileOutputStream os = new FileOutputStream(ini);
+			byte[] buf = new byte[1024];
+			int n = confis.read(buf);
+			while (n != -1) {
+				os.write(buf, 0, n);
+				n = confis.read(buf);
+			}
+			os.close();
+		}
+		confis.close();
+
+		BaseTag.load(new FileInputStream(ini));
 	}
 
 	@Override

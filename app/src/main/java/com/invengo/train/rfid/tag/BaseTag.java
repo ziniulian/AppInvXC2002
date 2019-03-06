@@ -223,6 +223,7 @@ public abstract class BaseTag {
 				case "T":
 					tp.setCls(TagT.class);
 					break;
+				case " ":
 				case "!":
 				case "Q":
 					tp.setCls(TagQ.class);

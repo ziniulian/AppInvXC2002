@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DataDic>
     <!-- Ver2.0 童永成 2017/07/17 综合整理，将车辆，机车，客车的车型、配属局段、制造厂等修整为1个文件 -->
-
+    <!-- Ver2.1 童永成 2018/11/23 将空格属性处理为企业自备车-->
+    <!-- Ver2.2 童永成 2019/03/05 按照 动车组标签代码表（铁科院下发）.pdf  增加机车配属段-->
+	<FileVer	Version="2.2"	LastDate="2019-03-05"	/>
 	<VehiclePropertys	Property="A">
 		<!-- 车辆属性 -->
 		<VehicleProperty PropertyCode="K" PropertyName="客车"/>
 		<VehicleProperty PropertyCode="D" PropertyName="动车"/>
 		<VehicleProperty PropertyCode="J" PropertyName="机车"/>
 		<VehicleProperty PropertyCode="T" PropertyName="路用货车"/>
+		<VehicleProperty PropertyCode=" " PropertyName="企业自备车"/>
 		<VehicleProperty PropertyCode="!" PropertyName="企业自备车"/>
 		<VehicleProperty PropertyCode="Q" PropertyName="企业自备车"/>
 	</VehiclePropertys>
@@ -113,109 +116,127 @@
 		<VehicleModel ModelCode="317" ModelName="CRH380BK" Property="D" />
 		<VehicleModel ModelCode="318" ModelName="CRH6A" Property="D" />
 		<VehicleModel ModelCode="319" ModelName="CRH6F" Property="D" />
-		<VehicleModel ModelCode="320" ModelName="CRH380A综合检测车" Property="D" />
-		<VehicleModel ModelCode="321" ModelName="CRH380B综合检测车" Property="D" />
-        <VehicleModel ModelCode="322" ModelName="CRH5综合检测车" Property="D" />
-		<VehicleModel ModelCode="001" ModelName="JF" Property="J" /> 
-		<VehicleModel ModelCode="003" ModelName="QJ" Property="J" /> 
-		<VehicleModel ModelCode="006" ModelName="KD7" Property="J" /> 
-		<VehicleModel ModelCode="101" ModelName="DF" Property="J" /> 
-		<VehicleModel ModelCode="102" ModelName="DF2" Property="J" /> 
-		<VehicleModel ModelCode="103" ModelName="DF3" Property="J" /> 
-		<VehicleModel ModelCode="104" ModelName="DF4" Property="J" /> 
-		<VehicleModel ModelCode="105" ModelName="DF4k" Property="J" /> 
-		<VehicleModel ModelCode="106" ModelName="DF4c" Property="J" /> 
-		<VehicleModel ModelCode="107" ModelName="DF5" Property="J" /> 
-		<VehicleModel ModelCode="108" ModelName="DF5k" Property="J" /> 
-		<VehicleModel ModelCode="109" ModelName="DF6" Property="J" /> 
-		<VehicleModel ModelCode="110" ModelName="DF7" Property="J" /> 
-		<VehicleModel ModelCode="111" ModelName="DF8" Property="J" /> 
-		<VehicleModel ModelCode="112" ModelName="DF9" Property="J" /> 
-		<VehicleModel ModelCode="113" ModelName="DF10" Property="J" /> 
-		<VehicleModel ModelCode="114" ModelName="DFH1" Property="J" /> 
-		<VehicleModel ModelCode="115" ModelName="DFH2" Property="J" /> 
-		<VehicleModel ModelCode="116" ModelName="DFH3" Property="J" /> 
-		<VehicleModel ModelCode="117" ModelName="DFH5" Property="J" /> 
-		<VehicleModel ModelCode="118" ModelName="BJ" Property="J" /> 
-		<VehicleModel ModelCode="119" ModelName="BJK" Property="J" /> 
-		<VehicleModel ModelCode="120" ModelName="ND2" Property="J" /> 
-		<VehicleModel ModelCode="121" ModelName="ND3" Property="J" /> 
-		<VehicleModel ModelCode="122" ModelName="ND4" Property="J" /> 
-		<VehicleModel ModelCode="123" ModelName="ND5" Property="J" /> 
-		<VehicleModel ModelCode="124" ModelName="NY5" Property="J" /> 
-		<VehicleModel ModelCode="125" ModelName="NY6" Property="J" /> 
-		<VehicleModel ModelCode="126" ModelName="NY7" Property="J" /> 
-		<VehicleModel ModelCode="127" ModelName="QY" Property="J" /> 
-		<VehicleModel ModelCode="128" ModelName="DFH21" Property="J" /> 
-		<VehicleModel ModelCode="129" ModelName="DF7B" Property="J" /> 
-		<VehicleModel ModelCode="130" ModelName="DF5ko" Property="J" /> 
-		<VehicleModel ModelCode="131" ModelName="DF7c" Property="J" /> 
-		<VehicleModel ModelCode="132" ModelName="DF7S" Property="J" /> 
-		<VehicleModel ModelCode="133" ModelName="GK1" Property="J" /> 
-		<VehicleModel ModelCode="134" ModelName="GK1F" Property="J" /> 
-		<VehicleModel ModelCode="135" ModelName="DF4E" Property="J" /> 
-		<VehicleModel ModelCode="136" ModelName="DF7D" Property="J" /> 
-		<VehicleModel ModelCode="137" ModelName="GK1A" Property="J" /> 
-		<VehicleModel ModelCode="138" ModelName="DF11" Property="J" /> 
-		<VehicleModel ModelCode="139" ModelName="TA" Property="J" /> 
-		<VehicleModel ModelCode="140" ModelName="DF10F" Property="J" /> 
-		<VehicleModel ModelCode="141" ModelName="DF4D" Property="J" /> 
-		<VehicleModel ModelCode="142" ModelName="DF8B" Property="J" /> 
-		<VehicleModel ModelCode="143" ModelName="DF12" Property="J" /> 
-		<VehicleModel ModelCode="144" ModelName="DF7E" Property="J" /> 
-		<VehicleModel ModelCode="145" ModelName="NYJ1" Property="J" /> 
-		<VehicleModel ModelCode="146" ModelName="NZJ1" Property="J" /> 
-		<VehicleModel ModelCode="147" ModelName="NZJ2" Property="J" /> 
-		<VehicleModel ModelCode="148" ModelName="DF4DJ" Property="J" /> 
-		<VehicleModel ModelCode="149" ModelName="NDJ1" Property="J" /> 
-		<VehicleModel ModelCode="150" ModelName="NDJ2" Property="J" /> 
-		<VehicleModel ModelCode="151" ModelName="NJ2" Property="J" /> 
-		<VehicleModel ModelCode="152" ModelName="DF7G" Property="J" /> 
-		<VehicleModel ModelCode="156" ModelName="DF11Z" Property="J" /> 
-		<VehicleModel ModelCode="158" ModelName="DF11G" Property="J" /> 
-		<VehicleModel ModelCode="160" ModelName="HXN3" Property="J" /> 
-		<VehicleModel ModelCode="161" ModelName="HXN5" Property="J" /> 
-		<VehicleModel ModelCode="162" ModelName="HXN3B" Property="J" /> 
-		<VehicleModel ModelCode="163" ModelName="HXN5B" Property="J" /> 
-		<VehicleModel ModelCode="201" ModelName="8G" Property="J" /> 
-		<VehicleModel ModelCode="202" ModelName="8K" Property="J" /> 
-		<VehicleModel ModelCode="203" ModelName="6G" Property="J" /> 
-		<VehicleModel ModelCode="204" ModelName="6K" Property="J" /> 
-		<VehicleModel ModelCode="205" ModelName="SS1" Property="J" /> 
-		<VehicleModel ModelCode="206" ModelName="SS3" Property="J" /> 
-		<VehicleModel ModelCode="207" ModelName="SS4" Property="J" /> 
-		<VehicleModel ModelCode="208" ModelName="SS5" Property="J" /> 
-		<VehicleModel ModelCode="209" ModelName="SS6" Property="J" /> 
-		<VehicleModel ModelCode="210" ModelName="SS3B" Property="J" /> 
-		<VehicleModel ModelCode="211" ModelName="SS7" Property="J" /> 
-		<VehicleModel ModelCode="212" ModelName="SS8" Property="J" /> 
-		<VehicleModel ModelCode="213" ModelName="SS7B" Property="J" /> 
-		<VehicleModel ModelCode="214" ModelName="SS7C" Property="J" /> 
-		<VehicleModel ModelCode="215" ModelName="SS6B" Property="J" /> 
-		<VehicleModel ModelCode="216" ModelName="SS9" Property="J" /> 
-		<VehicleModel ModelCode="217" ModelName="SS7D" Property="J" /> 
-		<VehicleModel ModelCode="218" ModelName="DJ" Property="J" /> 
-		<VehicleModel ModelCode="219" ModelName="DJ1" Property="J" /> 
-		<VehicleModel ModelCode="220" ModelName="DJ2" Property="J" /> 
-		<VehicleModel ModelCode="221" ModelName="DJF" Property="J" /> 
-		<VehicleModel ModelCode="222" ModelName="DJJ1" Property="J" /> 
-		<VehicleModel ModelCode="223" ModelName="DJF1" Property="J" /> 
-		<VehicleModel ModelCode="224" ModelName="SS7E" Property="J" /> 
-		<VehicleModel ModelCode="225" ModelName="SSJ3" Property="J" /> 
-		<VehicleModel ModelCode="226" ModelName="SS3C" Property="J" /> 
-		<VehicleModel ModelCode="231" ModelName="HXD1" Property="J" /> 
-		<VehicleModel ModelCode="232" ModelName="HXD2" Property="J" /> 
-		<VehicleModel ModelCode="233" ModelName="HXD3" Property="J" /> 
-		<VehicleModel ModelCode="234" ModelName="HXD1B" Property="J" /> 
-		<VehicleModel ModelCode="235" ModelName="HXD2B" Property="J" /> 
-		<VehicleModel ModelCode="236" ModelName="HXD3B" Property="J" /> 
-		<VehicleModel ModelCode="237" ModelName="HXD1C" Property="J" /> 
-		<VehicleModel ModelCode="238" ModelName="HXD2C" Property="J" /> 
-		<VehicleModel ModelCode="239" ModelName="HXD3C" Property="J" /> 
-		<VehicleModel ModelCode="240" ModelName="HXD1D" Property="J" /> 
-		<VehicleModel ModelCode="242" ModelName="HXD3D" Property="J" /> 
-		<VehicleModel ModelCode="243" ModelName="HXD1F" Property="J" /> 
-		<VehicleModel ModelCode="244" ModelName="HXD2F" Property="J" /> 
+		<VehicleModel ModelCode="320" ModelName="CRH380AJ" Property="D" />
+		<VehicleModel ModelCode="321" ModelName="CRH380BJ" Property="D" />
+		<VehicleModel ModelCode="322" ModelName="CRH5J" Property="D" />
+		<VehicleModel ModelCode="323" ModelName="CRH1A-A" Property="D" />
+		<VehicleModel ModelCode="324" ModelName="CRH2G" Property="D" />
+		<VehicleModel ModelCode="325" ModelName="CRH2J" Property="D" />
+		<VehicleModel ModelCode="326" ModelName="CRH380BG" Property="D" />
+		<VehicleModel ModelCode="327" ModelName="CRH380BJ-A" Property="D" />
+		<VehicleModel ModelCode="328" ModelName="CRH3A" Property="D" />
+		<VehicleModel ModelCode="329" ModelName="CRH5E" Property="D" />
+		<VehicleModel ModelCode="330" ModelName="CRH5G" Property="D" />
+		<VehicleModel ModelCode="331" ModelName="CRH6A-A" Property="D" />
+		<VehicleModel ModelCode="332" ModelName="CRH6F-A" Property="D" />
+		<VehicleModel ModelCode="333" ModelName="CRH380AM" Property="D" />
+		<VehicleModel ModelCode="334" ModelName="CR400AF" Property="D" />
+		<VehicleModel ModelCode="335" ModelName="CR400AF-A" Property="D" />
+		<VehicleModel ModelCode="336" ModelName="CR400AF-B" Property="D" />
+		<VehicleModel ModelCode="337" ModelName="CR400BF" Property="D" />
+		<VehicleModel ModelCode="338" ModelName="CR400BF-A" Property="D" />
+		<VehicleModel ModelCode="338" ModelName="CR400BF-B" Property="D" />
+
+		<VehicleModel ModelCode="001" ModelName="JF" Property="J" />
+		<VehicleModel ModelCode="003" ModelName="QJ" Property="J" />
+		<VehicleModel ModelCode="006" ModelName="KD7" Property="J" />
+		<VehicleModel ModelCode="101" ModelName="DF" Property="J" />
+		<VehicleModel ModelCode="102" ModelName="DF2" Property="J" />
+		<VehicleModel ModelCode="103" ModelName="DF3" Property="J" />
+		<VehicleModel ModelCode="104" ModelName="DF4" Property="J" />
+		<VehicleModel ModelCode="105" ModelName="DF4k" Property="J" />
+		<VehicleModel ModelCode="106" ModelName="DF4c" Property="J" />
+		<VehicleModel ModelCode="107" ModelName="DF5" Property="J" />
+		<VehicleModel ModelCode="108" ModelName="DF5k" Property="J" />
+		<VehicleModel ModelCode="109" ModelName="DF6" Property="J" />
+		<VehicleModel ModelCode="110" ModelName="DF7" Property="J" />
+		<VehicleModel ModelCode="111" ModelName="DF8" Property="J" />
+		<VehicleModel ModelCode="112" ModelName="DF9" Property="J" />
+		<VehicleModel ModelCode="113" ModelName="DF10" Property="J" />
+		<VehicleModel ModelCode="114" ModelName="DFH1" Property="J" />
+		<VehicleModel ModelCode="115" ModelName="DFH2" Property="J" />
+		<VehicleModel ModelCode="116" ModelName="DFH3" Property="J" />
+		<VehicleModel ModelCode="117" ModelName="DFH5" Property="J" />
+		<VehicleModel ModelCode="118" ModelName="BJ" Property="J" />
+		<VehicleModel ModelCode="119" ModelName="BJK" Property="J" />
+		<VehicleModel ModelCode="120" ModelName="ND2" Property="J" />
+		<VehicleModel ModelCode="121" ModelName="ND3" Property="J" />
+		<VehicleModel ModelCode="122" ModelName="ND4" Property="J" />
+		<VehicleModel ModelCode="123" ModelName="ND5" Property="J" />
+		<VehicleModel ModelCode="124" ModelName="NY5" Property="J" />
+		<VehicleModel ModelCode="125" ModelName="NY6" Property="J" />
+		<VehicleModel ModelCode="126" ModelName="NY7" Property="J" />
+		<VehicleModel ModelCode="127" ModelName="QY" Property="J" />
+		<VehicleModel ModelCode="128" ModelName="DFH21" Property="J" />
+		<VehicleModel ModelCode="129" ModelName="DF7B" Property="J" />
+		<VehicleModel ModelCode="130" ModelName="DF5ko" Property="J" />
+		<VehicleModel ModelCode="131" ModelName="DF7c" Property="J" />
+		<VehicleModel ModelCode="132" ModelName="DF7S" Property="J" />
+		<VehicleModel ModelCode="133" ModelName="GK1" Property="J" />
+		<VehicleModel ModelCode="134" ModelName="GK1F" Property="J" />
+		<VehicleModel ModelCode="135" ModelName="DF4E" Property="J" />
+		<VehicleModel ModelCode="136" ModelName="DF7D" Property="J" />
+		<VehicleModel ModelCode="137" ModelName="GK1A" Property="J" />
+		<VehicleModel ModelCode="138" ModelName="DF11" Property="J" />
+		<VehicleModel ModelCode="139" ModelName="TA" Property="J" />
+		<VehicleModel ModelCode="140" ModelName="DF10F" Property="J" />
+		<VehicleModel ModelCode="141" ModelName="DF4D" Property="J" />
+		<VehicleModel ModelCode="142" ModelName="DF8B" Property="J" />
+		<VehicleModel ModelCode="143" ModelName="DF12" Property="J" />
+		<VehicleModel ModelCode="144" ModelName="DF7E" Property="J" />
+		<VehicleModel ModelCode="145" ModelName="NYJ1" Property="J" />
+		<VehicleModel ModelCode="146" ModelName="NZJ1" Property="J" />
+		<VehicleModel ModelCode="147" ModelName="NZJ2" Property="J" />
+		<VehicleModel ModelCode="148" ModelName="DF4DJ" Property="J" />
+		<VehicleModel ModelCode="149" ModelName="NDJ1" Property="J" />
+		<VehicleModel ModelCode="150" ModelName="NDJ2" Property="J" />
+		<VehicleModel ModelCode="151" ModelName="NJ2" Property="J" />
+		<VehicleModel ModelCode="152" ModelName="DF7G" Property="J" />
+		<VehicleModel ModelCode="156" ModelName="DF11Z" Property="J" />
+		<VehicleModel ModelCode="158" ModelName="DF11G" Property="J" />
+		<VehicleModel ModelCode="160" ModelName="HXN3" Property="J" />
+		<VehicleModel ModelCode="161" ModelName="HXN5" Property="J" />
+		<VehicleModel ModelCode="162" ModelName="HXN3B" Property="J" />
+		<VehicleModel ModelCode="163" ModelName="HXN5B" Property="J" />
+		<VehicleModel ModelCode="201" ModelName="8G" Property="J" />
+		<VehicleModel ModelCode="202" ModelName="8K" Property="J" />
+		<VehicleModel ModelCode="203" ModelName="6G" Property="J" />
+		<VehicleModel ModelCode="204" ModelName="6K" Property="J" />
+		<VehicleModel ModelCode="205" ModelName="SS1" Property="J" />
+		<VehicleModel ModelCode="206" ModelName="SS3" Property="J" />
+		<VehicleModel ModelCode="207" ModelName="SS4" Property="J" />
+		<VehicleModel ModelCode="208" ModelName="SS5" Property="J" />
+		<VehicleModel ModelCode="209" ModelName="SS6" Property="J" />
+		<VehicleModel ModelCode="210" ModelName="SS3B" Property="J" />
+		<VehicleModel ModelCode="211" ModelName="SS7" Property="J" />
+		<VehicleModel ModelCode="212" ModelName="SS8" Property="J" />
+		<VehicleModel ModelCode="213" ModelName="SS7B" Property="J" />
+		<VehicleModel ModelCode="214" ModelName="SS7C" Property="J" />
+		<VehicleModel ModelCode="215" ModelName="SS6B" Property="J" />
+		<VehicleModel ModelCode="216" ModelName="SS9" Property="J" />
+		<VehicleModel ModelCode="217" ModelName="SS7D" Property="J" />
+		<VehicleModel ModelCode="218" ModelName="DJ" Property="J" />
+		<VehicleModel ModelCode="219" ModelName="DJ1" Property="J" />
+		<VehicleModel ModelCode="220" ModelName="DJ2" Property="J" />
+		<VehicleModel ModelCode="221" ModelName="DJF" Property="J" />
+		<VehicleModel ModelCode="222" ModelName="DJJ1" Property="J" />
+		<VehicleModel ModelCode="223" ModelName="DJF1" Property="J" />
+		<VehicleModel ModelCode="224" ModelName="SS7E" Property="J" />
+		<VehicleModel ModelCode="225" ModelName="SSJ3" Property="J" />
+		<VehicleModel ModelCode="226" ModelName="SS3C" Property="J" />
+		<VehicleModel ModelCode="231" ModelName="HXD1" Property="J" />
+		<VehicleModel ModelCode="232" ModelName="HXD2" Property="J" />
+		<VehicleModel ModelCode="233" ModelName="HXD3" Property="J" />
+		<VehicleModel ModelCode="234" ModelName="HXD1B" Property="J" />
+		<VehicleModel ModelCode="235" ModelName="HXD2B" Property="J" />
+		<VehicleModel ModelCode="236" ModelName="HXD3B" Property="J" />
+		<VehicleModel ModelCode="237" ModelName="HXD1C" Property="J" />
+		<VehicleModel ModelCode="238" ModelName="HXD2C" Property="J" />
+		<VehicleModel ModelCode="239" ModelName="HXD3C" Property="J" />
+		<VehicleModel ModelCode="240" ModelName="HXD1D" Property="J" />
+		<VehicleModel ModelCode="242" ModelName="HXD3D" Property="J" />
+		<VehicleModel ModelCode="243" ModelName="HXD1F" Property="J" />
+		<VehicleModel ModelCode="244" ModelName="HXD2F" Property="J" />
 	</VehicleModels>
         <BelongIns	Property="JD">
 				<!-- 动车检修厂代码及机车配属局段代码 -->
@@ -324,6 +345,9 @@
                 <Area AreaCode="38" AreaName="青藏铁路公司" Property="D">
                       <Station StationCode="01" StationName="西宁车辆段" />
                       <Station StationCode="11" StationName="西宁动车所" />
+                </Area>
+                <Area AreaCode="39" AreaName="铁科院" Property="D">
+                      <Station StationCode="00" StationName="铁科院" />
                 </Area>
                 <Area AreaCode="01" AreaName="哈尔滨局" Property="J" StationNum="6">
                       <Station StationCode="01" StationName="哈尔滨" />
@@ -478,7 +502,7 @@
                 </Area>
 	</BelongIns>
 	<CarVehicleTypes	Property="K">
-		<!-- 部属车辆及企业自备车辆的车种代码 -->
+		<!-- 客车车型代码,若无特殊要求，一般不显示为汉字，直接车型+数字，如YZ25G -->
 		<VehicleType TypeCode="RZ" TypeName="软座车"/>
 		<VehicleType TypeCode="YZ" TypeName="硬座车"/>
 		<VehicleType TypeCode="RW" TypeName="软卧车"/>

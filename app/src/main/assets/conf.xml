@@ -11,7 +11,7 @@
 
 <conf use="op1">
     <!-- 货车 -->
-    <op1 mask="TQ!" name="XC2002-RHC型便携式标签读出器"/>
+    <op1 mask="TQ! " name="XC2002-RHC型便携式标签读出器"/>
 
     <!-- 客车 -->
     <op2 mask="K" name="XC2002-RKC型便携式标签读出器"/>
