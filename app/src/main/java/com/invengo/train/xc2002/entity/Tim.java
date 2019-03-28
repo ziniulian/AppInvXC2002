@@ -57,14 +57,28 @@ public class Tim implements Runnable {
 				);
 
 				// 生成反馈文件
-				try {
-					File f = new File(Environment.getExternalStorageDirectory(), sdDir + path);
-					if (!f.getParentFile().exists()) {
-						f.getParentFile().mkdirs();
+				String d = sdDir.substring(0, sdDir.length() - 3);
+				File f = null;
+				for (int i = 0; i < 3; i ++) {
+					switch (i) {
+						case 0:
+							f = new File(Environment.getExternalStorageDirectory(), d + "HC/" + path);
+							break;
+						case 1:
+							f = new File(Environment.getExternalStorageDirectory(), d + "JC/" + path);
+							break;
+						case 2:
+							f = new File(Environment.getExternalStorageDirectory(), d + "KC/" + path);
+							break;
 					}
-					f.createNewFile();
-				} catch (Exception e) {
-//					e.printStackTrace();
+					try {
+						if (!f.getParentFile().exists()) {
+							f.getParentFile().mkdirs();
+						}
+						f.createNewFile();
+					} catch (Exception e) {
+//						e.printStackTrace();
+					}
 				}
 			}
 		};
