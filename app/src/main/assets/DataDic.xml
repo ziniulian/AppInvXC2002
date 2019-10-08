@@ -135,7 +135,7 @@
 		<VehicleModel ModelCode="336" ModelName="CR400AF-B" Property="D" />
 		<VehicleModel ModelCode="337" ModelName="CR400BF" Property="D" />
 		<VehicleModel ModelCode="338" ModelName="CR400BF-A" Property="D" />
-		<VehicleModel ModelCode="338" ModelName="CR400BF-B" Property="D" />
+		<VehicleModel ModelCode="339" ModelName="CR400BF-B" Property="D" />
 
 		<VehicleModel ModelCode="001" ModelName="JF" Property="J" /> 
 		<VehicleModel ModelCode="003" ModelName="QJ" Property="J" /> 
