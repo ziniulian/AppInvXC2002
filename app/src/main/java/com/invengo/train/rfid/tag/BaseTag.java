@@ -88,6 +88,7 @@ public abstract class BaseTag {
 			// 纠正标签源码与属性码不一致的问题
 			switch (r) {
 				case "!":
+				case " ":
 					r = "Q";
 					break;
 			}
