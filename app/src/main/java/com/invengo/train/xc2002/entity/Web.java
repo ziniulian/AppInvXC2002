@@ -15,6 +15,7 @@ import com.invengo.train.xc2002.R;
 import com.invengo.train.xc2002.dao.DbLocal;
 import com.invengo.train.xc2002.enums.EmUh;
 import com.invengo.train.xc2002.enums.EmUrl;
+import com.lzr.utl.AdrSys;
 
 import java.io.File;
 
@@ -176,4 +177,13 @@ public class Web {
 		ma.finish();
 	}
 
+	@JavascriptInterface
+	public String getAppVersion() {
+		return AdrSys.getVerNam(ma);
+	}
+
+	@JavascriptInterface
+	public String getDatVersion() {
+		return BaseTag.getVer();
+	}
 }

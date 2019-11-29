@@ -24,6 +24,7 @@ public abstract class BaseTag {
 	private String cod;	// 标签源码
 	protected TagPro tpro;	// 标签属性
 	private static String able = "TQ!KJD";	// 遮罩
+	private static String ver = "";	// 版本
 	private static Map<String, TagPro> ts = new HashMap<>();	// 类型集合
 
 	public void setCod(String cod) {
@@ -100,6 +101,10 @@ public abstract class BaseTag {
 		return able;
 	}
 
+	public static String getVer () {
+		return ver;
+	}
+
 	// 解析标签
 	public static BaseTag parse (String c) {
 		BaseTag tag;
@@ -129,13 +134,17 @@ public abstract class BaseTag {
 					// 虽在 parse 处已作异常处理，但不知为何还会死机，故在此处再做一次异常处理看是否能解决该问题。
 					// 可能 Conver 接口传回了空值，也可能是 Conver 接口死机造成的。
 					String s = Conver(src, 0);
-//Log.i("---------", s);
+//Log.i("---------", "|" + s + "|");
 //				tag = parse("TC50   400000211A12C");
 //				tag = parse("!C64K  Q06505812A94C");
 //				tag = parse("KYW25T 677083E073 066");
 //				tag = parse("J10489001401AH  TK88188 ");
 //				tag = parse("D3010000002101   G12345B");
-					tag = parse(s);
+					if (s.startsWith("        ")) {
+						tag = new TagUn("空标签！");
+					} else {
+						tag = parse(s);
+					}
 				} catch (Exception e) {
 					tag = parse("?");
 				}
@@ -189,6 +198,8 @@ public abstract class BaseTag {
 		// 属性配置
 		if (ts.isEmpty()) {
 			Document doc = dbd.parse(fs);
+
+			ver = doc.getElementsByTagName("FileVer").item(0).getAttributes().getNamedItem("Version").getNodeValue();
 
 			loadPro(doc.getElementsByTagName("VehicleProperty"));	// 标签属性
 			loadTyp(doc.getElementsByTagName("VehicleType"));	// 车种

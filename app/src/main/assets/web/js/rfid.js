@@ -69,6 +69,14 @@ rfid = {
 		rfdo.callTim();
 	},
 
+	getAppVer: function () {
+		return rfdo.getAppVersion();
+	},
+
+	getDatVer: function () {
+		return rfdo.getDatVersion();
+	},
+
 	exit: function () {
 		rfdo.exit();
 	}

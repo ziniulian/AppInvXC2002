@@ -3,7 +3,9 @@
     <!-- Ver2.0 童永成 2017/07/17 综合整理，将车辆，机车，客车的车型、配属局段、制造厂等修整为1个文件 -->
     <!-- Ver2.1 童永成 2018/11/23 将空格属性处理为企业自备车-->
     <!-- Ver2.2 童永成 2019/03/05 按照 动车组标签代码表（铁科院下发）.pdf  增加机车配属段-->
-	<FileVer	Version="2.2"	LastDate="2019-03-18"	/>
+    <!-- Ver2.3 童永成 2019/10/31 按照马秦提供249，251车型，增加2个机车车型代码-->
+    <!-- Ver2.4 童永成 2019/11/29 修改柳州局为南宁局-->
+	<FileVer	Version="2.4"	LastDate="2019-11-29"	/>
 	<VehiclePropertys	Property="A">
 		<!-- 车辆属性 -->
 		<VehicleProperty PropertyCode="K" PropertyName="客车"/>
@@ -239,28 +241,31 @@
 		<VehicleModel ModelCode="244" ModelName="HXD2F" Property="J" /> 
 		<VehicleModel ModelCode="247" ModelName="FXD1" Property="J" /> 
 		<VehicleModel ModelCode="248" ModelName="FXD3" Property="J" /> 
+		<VehicleModel ModelCode="249" ModelName="KZ25TA" Property="J" /> 
+		<VehicleModel ModelCode="251" ModelName="KZ25TB" Property="J" /> 
 	</VehicleModels>
         <BelongIns	Property="JD">
 				<!-- 动车检修厂代码及机车配属局段代码 -->
 				<Area AreaCode="21" AreaName="哈尔滨局" Property="D">
-                      <Station StationCode="01" StationName="哈尔滨动车段" />
+                      <Station StationCode="01" StationName="三棵树车辆段" />
                       <Station StationCode="11" StationName="哈尔滨西动车所" />
                 </Area>
                 <Area AreaCode="22" AreaName="沈阳局" Property="D">
                       <Station StationCode="01" StationName="沈阳动车段" />
+                      <Station StationCode="11" StationName="沈阳动车所" />
                       <Station StationCode="12" StationName="沈阳北动车所" />
                       <Station StationCode="13" StationName="沈阳南动车所" />
                       <Station StationCode="14" StationName="长春动车所" />
                       <Station StationCode="15" StationName="大连动车所" />
-                      <Station StationCode="16" StationName="通辽动车所" />
                 </Area>
                 <Area AreaCode="23" AreaName="北京局" Property="D">
                       <Station StationCode="01" StationName="北京动车段" />
-                      <Station StationCode="02" StationName="天津动车客车段" />
                       <Station StationCode="11" StationName="北京动车所" />
                       <Station StationCode="12" StationName="北京西动车所" />
                       <Station StationCode="13" StationName="北京南动车所" />
                       <Station StationCode="14" StationName="天津动车所" />
+                      <Station StationCode="15" StationName="星火动车所" />
+                      <Station StationCode="16" StationName="丰台动车所" />
                       <Station StationCode="17" StationName="石家庄动车所" />
                 </Area>
                 <Area AreaCode="24" AreaName="太原局" Property="D">
@@ -268,11 +273,11 @@
                       <Station StationCode="11" StationName="太原动车所" />
                 </Area>
                 <Area AreaCode="25" AreaName="呼和浩特局" Property="D">
-                      <Station StationCode="01" StationName="包头车辆段" />
+                      <Station StationCode="01" StationName="呼和浩特车辆段" />
                       <Station StationCode="11" StationName="呼和浩特动车所" />
                 </Area>
                 <Area AreaCode="26" AreaName="郑州局" Property="D">
-                      <Station StationCode="01" StationName="郑州动车段" />
+                      <Station StationCode="01" StationName="郑州车辆段" />
                       <Station StationCode="11" StationName="郑州动车所" />
                       <Station StationCode="12" StationName="郑州东动车所" />
                 </Area>
@@ -282,7 +287,7 @@
                       <Station StationCode="12" StationName="武汉动车所" />
                 </Area>
                 <Area AreaCode="28" AreaName="西安局" Property="D">
-                      <Station StationCode="01" StationName="西安动车段" />
+                      <Station StationCode="01" StationName="西安车辆段" />
                       <Station StationCode="11" StationName="西安北动车所" />
                 </Area>
                 <Area AreaCode="29" AreaName="济南局" Property="D">
@@ -290,19 +295,16 @@
                       <Station StationCode="11" StationName="青岛动车所" />
                       <Station StationCode="12" StationName="青岛北动车所" />
                       <Station StationCode="13" StationName="济南动车所" />
-                      <Station StationCode="13" StationName="济南东动车所" />
                 </Area>
                 <Area AreaCode="30" AreaName="上海局" Property="D">
-                      <Station StationCode="01" StationName="上海动车段" />
-                      <Station StationCode="01" StationName="南京动车段" />
+                      <Station StationCode="01" StationName="上海动车客车段" />
                       <Station StationCode="11" StationName="上海南动车所" />
                       <Station StationCode="12" StationName="南翔动车所" />
                       <Station StationCode="13" StationName="虹桥动车所" />
                       <Station StationCode="14" StationName="杭州动车所" />
                       <Station StationCode="15" StationName="南京动车所" />
                       <Station StationCode="16" StationName="南京南动车所" />
-                      <Station StationCode="17" StationName="合肥南动车所" />
-                      <Station StationCode="18" StationName="徐州东动车所" />
+                      <Station StationCode="17" StationName="合肥动车所" />
                 </Area>
                 <Area AreaCode="31" AreaName="南昌局" Property="D">
                       <Station StationCode="01" StationName="南昌车辆段" />
@@ -312,43 +314,35 @@
                       <Station StationCode="21" StationName="福州动车所" />
                       <Station StationCode="22" StationName="福州南动车所" />
                       <Station StationCode="23" StationName="厦门北动车所" />
-                      <Station StationCode="24" StationName="龙岩动车所" />
                 </Area>
                 <Area AreaCode="32" AreaName="广铁集团" Property="D">
                       <Station StationCode="01" StationName="广州动车段" />
-                      <Station StationCode="02" StationName="长沙车辆段" />
                       <Station StationCode="11" StationName="广州东动车所" />
                       <Station StationCode="12" StationName="广州南动车所" />
                       <Station StationCode="13" StationName="长沙动车所" />
                       <Station StationCode="14" StationName="三亚动车所" />
                       <Station StationCode="15" StationName="广珠动车所" />
                       <Station StationCode="16" StationName="深圳北动车所" />
-                      <Station StationCode="17" StationName="佛山西客专所" />
-                      <Station StationCode="18" StationName="佛山西城际所" />
-                      <Station StationCode="19" StationName="惠州城际所" />
-                      <Station StationCode="20" StationName="长沙城际所" />
+                      <Station StationCode="17" StationName="佛山西动车所" />
                 </Area>
                 <Area AreaCode="33" AreaName="南宁局" Property="D">
                       <Station StationCode="01" StationName="南宁车辆段" />
                       <Station StationCode="11" StationName="南宁动车所" />
-                      <Station StationCode="12" StationName="桂林动车所" />
                 </Area>
                 <Area AreaCode="34" AreaName="成都局" Property="D">
-                      <Station StationCode="01" StationName="成都动车段" />
-                      <Station StationCode="02" StationName="重启车辆段" />
-                      <Station StationCode="03" StationName="贵阳车辆段" />
+                      <Station StationCode="01" StationName="成都车辆段" />
                       <Station StationCode="11" StationName="成都东动车所" />
                       <Station StationCode="12" StationName="重庆北动车所" />
                       <Station StationCode="13" StationName="重庆西动车所" />
-                      <Station StationCode="14" StationName="贵阳北动车所" />
+                      <Station StationCode="14" StationName="贵阳动车所" />
                 </Area>
                 <Area AreaCode="35" AreaName="昆明局" Property="D">
                       <Station StationCode="01" StationName="昆明车辆段" />
-                      <Station StationCode="11" StationName="昆明动车所" />
+                      <Station StationCode="11" StationName="昆明南动车所" />
                 </Area>
                 <Area AreaCode="36" AreaName="兰州局" Property="D">
                       <Station StationCode="01" StationName="兰州车辆段" />
-                      <Station StationCode="11" StationName="兰州西动车所" />
+                      <Station StationCode="11" StationName="兰州动车所" />
                 </Area>
                 <Area AreaCode="37" AreaName="乌鲁木齐局" Property="D">
                       <Station StationCode="01" StationName="乌鲁木齐车辆段" />
@@ -450,7 +444,7 @@
                       <Station StationCode="06" StationName="娄底" />
                       <Station StationCode="07" StationName="怀化" />
                 </Area>
-                <Area AreaCode="10" AreaName="柳州局" Property="J" StationNum="4">
+                <Area AreaCode="10" AreaName="南宁局" Property="J" StationNum="4">
                       <Station StationCode="01" StationName="桂林" />
                       <Station StationCode="02" StationName="柳州" />
                       <Station StationCode="03" StationName="玉林" />
