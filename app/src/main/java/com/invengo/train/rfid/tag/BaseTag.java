@@ -1,5 +1,8 @@
 package com.invengo.train.rfid.tag;
 
+import android.os.Environment;
+import android.util.Log;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -8,6 +11,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +29,10 @@ import static com.invengo.tagdata2str.DataConver.Conver;
 public abstract class BaseTag {
 	private String cod;	// 标签源码
 	protected TagPro tpro;	// 标签属性
-	private static String able = "TQ!KJD";	// 遮罩
+	private static File logFil = null;	// 日志文件
+	public final static SimpleDateFormat logTim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS"); //精确到毫秒
+	public final static String logAble = "TQ! KJD";	// 全型遮罩日志判别标记
+	private static String able = logAble;	// 遮罩
 	private static String ver = "";	// 版本
 	private static Map<String, TagPro> ts = new HashMap<>();	// 类型集合
 
@@ -97,6 +106,10 @@ public abstract class BaseTag {
 		return r;
 	}
 
+	public static void setLogFil (String path) {
+		logFil = new File(Environment.getExternalStorageDirectory(), path);
+	}
+
 	public static String getAble () {
 		return able;
 	}
@@ -134,6 +147,12 @@ public abstract class BaseTag {
 					// 虽在 parse 处已作异常处理，但不知为何还会死机，故在此处再做一次异常处理看是否能解决该问题。
 					// 可能 Conver 接口传回了空值，也可能是 Conver 接口死机造成的。
 					String s = Conver(src, 0);
+
+					// 将s记入 LOG 日志
+					if (getAble().equals(logAble)) {
+						log(s);
+					}
+
 //Log.i("---------", "|" + s + "|");
 //				tag = parse("TC50   400000211A12C");
 //				tag = parse("!C64K  Q06505812A94C");
@@ -374,6 +393,32 @@ public abstract class BaseTag {
 			k = e.getKey();
 			for (i = 0; i < k.length(); i++) {
 				ts.get(Character.toString(k.charAt(i))).setJus(e.getValue());
+			}
+		}
+	}
+
+	// 日志记录
+	public static void log (String msg) {
+		if (logFil != null) {
+			try {
+				FileOutputStream fos;
+				if(!logFil.exists()){
+//					logFil.createNewFile();	//如果文件不存在，就创建该文件
+					fos = new FileOutputStream(logFil);	//首次写入获取
+				}else{
+					//如果文件已存在，那么就在文件末尾追加写入
+					fos = new FileOutputStream(logFil, true);	//这里构造方法多了一个参数true,表示在文件末尾追加写入
+				}
+
+				OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");	//指定以UTF-8格式写入文件
+				osw.write("<br/>\n------ ");
+				osw.write(logTim.format(new Date()));
+				osw.write(" ------<br/>\n");
+				osw.write(msg);
+				osw.write("<br/>\n");
+				osw.close();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 	}

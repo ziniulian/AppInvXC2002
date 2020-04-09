@@ -8,6 +8,7 @@ import com.invengo.train.rfid.Base;
 import com.invengo.train.rfid.Crc;
 import com.invengo.train.rfid.EmCb;
 import com.invengo.train.rfid.tag.BaseTag;
+import com.lzr.utl.Hex2Bytes;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,6 +29,7 @@ public class Rd extends Base {
 	private static final int br = 9600;	// 波特率 （原接口使用的波特率为 ：115200）
 	private static final String drv = "/dev/ttyS4";	// 串口驱动名
 	private static final String xmlPath = "DataDic.xml";	// XML 文件路径
+	private static final String logFilPath = "log.txt";	// 日志文件路径
 
 	private SerialPort sp = null;	// 串口对象
 	private ReadThread rt = null;	// 读取线程
@@ -66,6 +68,10 @@ public class Rd extends Base {
 //Log.i(TAG, "挂机 ...");
 						size = this.is.read(buf);
 						if (size > 0) {
+							// 将原始二进制码记入 LOG 日志
+							if (BaseTag.getAble().equals(BaseTag.logAble)) {
+								BaseTag.log(size + "-" + Hex2Bytes.byt2Hex(buf));
+							}
 //							Log.i(TAG, "------------ s : " + size);
 //							for (int i = 0; i < size; i++) {
 //								Log.i(TAG, Integer.toHexString(buf[i]));
@@ -163,6 +169,9 @@ public class Rd extends Base {
 
 	@Override
 	public void init(Context ct) throws Exception {
+		// 设置日志文件路径
+		BaseTag.setLogFil(sdDir + logFilPath);
+
 		// 文件复制
 		File ini = new File(Environment.getExternalStorageDirectory(), sdDir + xmlPath);
 		InputStream confis = ct.getAssets().open(xmlPath);

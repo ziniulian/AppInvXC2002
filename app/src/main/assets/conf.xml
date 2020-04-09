@@ -9,7 +9,10 @@
     conf 的 use 属性设置子元素名。用来确定 APP 具体使用了哪个子元素的配置。
  -->
 
-<conf use="op1">
+<conf use="op0">
+    <!-- 全型 -->
+    <op0 mask="TQ! KJD" name="XC2002全型"/>
+
     <!-- 货车 -->
     <op1 mask="TQ! " name="XC2002-RHC型便携式标签读出器"/>
 
