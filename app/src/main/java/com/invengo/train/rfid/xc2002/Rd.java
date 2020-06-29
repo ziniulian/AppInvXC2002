@@ -73,9 +73,7 @@ public class Rd extends Base {
 								BaseTag.log(size + "-" + Hex2Bytes.byt2Hex(buf));
 							}
 //							Log.i(TAG, "------------ s : " + size);
-//							for (int i = 0; i < size; i++) {
-//								Log.i(TAG, Integer.toHexString(buf[i]));
-//							}
+//							Log.i(TAG, Hex2Bytes.byt2Hex(buf));
 //							Log.i(TAG, "------------ e");
 
 							int i = 0;

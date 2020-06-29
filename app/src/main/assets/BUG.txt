@@ -1,4 +1,4 @@
-﻿V0.2.18 ：
+﻿V0.2.19 ：
 	数据管理和数据清空页面在弹出无数据对话框时按BACK键，会直接跳回首页。（计划将 noDialog 改为 dialogNothing）
 
 	GPS校时功能
@@ -14,7 +14,7 @@
 LOG.txt 更新版本信息
 BUG.txt 版本修改
 build.gradle(Module:app) 版本修改 ， versionCode ++
-assets/web/js/about.js 版本修改
+assets/web/js/about.js 版本修改（不需要了）
 
 xc2002/Ma.java 修改 sdDir 属性
 assets/conf.xml 修改 use 属性

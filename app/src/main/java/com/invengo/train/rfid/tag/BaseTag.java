@@ -1,7 +1,6 @@
 package com.invengo.train.rfid.tag;
 
 import android.os.Environment;
-import android.util.Log;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

@@ -23,9 +23,16 @@ public class TagJ extends BaseTag {
 		suo = cod.substring(10, 12);	// 配属段（所）
 		sta = cod.substring(12, 13);	// 机车状态
 		kh = cod.substring(13, 14);	// 客货类别
-		tnoLet = cod.substring(14, 18);	// 车次字母区
-		tnoNum = cod.substring(18, 23);	// 车次数字区
-		pot = cod.substring(23, 24);	// 双机车状态（端位）
+		if (cod.length() < 24) {
+			// 老机车编号
+			tnoLet = "";	// 车次字母区
+			tnoNum = cod.substring(14, 19);	// 车次数字区
+			pot = cod.substring(19, 20);	// 双机车状态（端位）
+		} else {
+			tnoLet = cod.substring(14, 18);	// 车次字母区
+			tnoNum = cod.substring(18, 23);	// 车次数字区
+			pot = cod.substring(23, 24);	// 双机车状态（端位）
+		}
 	}
 
 	@Override
